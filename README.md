@@ -11,10 +11,12 @@ To add text to the app, we use the widget Text.
 Text('Hello World!)
 ```
 
-Text are placed in the top left corner of its parent widget.
+Text widgets are placed in the top left corner of its parent widget.
 In order to center the text, we use the widget Center.
 
-> To have a well formated code in dart, we use dartfmt. you have to help it by adding a comma after each widget. as shown in the example below.
+> To have a well formated code in dart, we use dartfmt. 
+> you have to help it by adding a comma after each widget. 
+> as shown in the example below.
 
 ```dart
 Center(
