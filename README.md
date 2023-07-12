@@ -1,7 +1,5 @@
 # i_am_rich
 
-> First app to create using flutter.
-
 Flutter apps is formed of widgets.
 Each widget can be a container of other widgets.
 
