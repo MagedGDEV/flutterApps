@@ -1,18 +1,30 @@
 # i_am_rich
 
-This is a simple app that displays an image.
+This is a simple app that displays an image, and it teaches us about the following:
+
+- How to add assets to our app
+- How to add images to our app
+- **Text**
+- **Center**
+- **Scaffold**
+- **AppBar**
+- **Image**
 
 | iOS | Android |
 |--|--|
 |![iOS_Rich](screenshots/iphone14ProMax_4.png)|![Android_Rich](screenshots/nexus6_4.png)|
 
-The i_am_poor app is the same as the i_am_rich app, but it displays a different image, added as challenge to ensure that we understand the concepts.
-
 ## i_am_poor (Challenge)
+
+The i_am_poor app is the same as the i_am_rich app, but it displays a different image, added as challenge to ensure that we understand the concepts.
 
 | iOS | Android |
 |--|--|
 |![iOS_Poor](screenshots/iphone14ProMax_5.png)|![Android_Poor](screenshots/nexus6_5.png)|
+
+## Tutorial
+
+Here we are going to demonstrate how to build the ***i_am_rich app***.
 
 Flutter apps is formed of widgets.
 Each widget can be a container of other widgets.
