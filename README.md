@@ -1,5 +1,19 @@
 # i_am_rich
 
+This is a simple app that displays an image.
+
+| iOS | Android |
+|--|--|
+|![iOS_Rich](screenshots/iphone14ProMax_4.png)|![Android_Rich](screenshots/nexus6_4.png)|
+
+The i_am_poor app is the same as the i_am_rich app, but it displays a different image, added as challenge to ensure that we understand the concepts.
+
+## i_am_poor (Challenge)
+
+| iOS | Android |
+|--|--|
+|![iOS_Poor](screenshots/iphone14ProMax_5.png)|![Android_Poor](screenshots/nexus6_5.png)|
+
 Flutter apps is formed of widgets.
 Each widget can be a container of other widgets.
 
