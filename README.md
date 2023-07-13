@@ -126,7 +126,7 @@ MaterialApp(
 To wrap some wigdet within another widget, we can do this easily in android studio by selecting the widget and do on of the following:
 
 - Press on the light bulb icon on the left of the widget
-- **Ctrl + Alt + W** (Windows) / **Option + Command + W** (Mac)
+- **Option + Enter** (Mac)
 
 Then choose the option we need from the list and prevent making mistakes.
 
