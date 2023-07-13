@@ -8,9 +8,10 @@ void main() {
           title: Text('I Am Rich'),
           backgroundColor: Colors.blueGrey[900],
         ),
-        body: Image(
-          image: NetworkImage(
-              'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg'),
+        body: Center(
+          child: Image(
+            image: AssetImage('images/diamond.png'),
+          ),
         ),
         backgroundColor: Colors.blueGrey,
       ),
