@@ -162,3 +162,40 @@ Column(
 |`mainAxisAlignment: MainAxisAlignment.spaceEvenly`| Place the free space evenly between the children as well as before and after the first and last child |![MainAxisAlignment.spaceEvenly](/screenshots/main_space_evenly.png)|
 |`mainAxisAlignment: MainAxisAlignment.spaceBetween`| Place the free space evenly between the children |![MainAxisAlignment.spaceBetween](/screenshots/main_space_between.png)|
 |`mainAxisAlignment: MainAxisAlignment.spaceAround`| Place the free space evenly between the children as well as half of that space before and after the first and last child |![MainAxisAlignment.spaceAround](/screenshots/main_space_around.png)|
+
+To set width of the container to the maximum width of the screen, we can use `double.infinity` as a value for the **width** property of the Container widget.
+
+Column widget takes a **crossAxisAlignment** property that allows us to align the widgets inside the column horizontally. It takes a **CrossAxisAlignment** object as a value, and it has different types of values:
+
+```dart
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Container(
+      color: Colors.white,
+      width: 100,
+      height: 100,
+      child: Text('Container 1'),
+    ),
+    Container(
+      color: Colors.red,
+      width: double.infinity,
+      height: 100,
+      child: Text('Container 2'),
+    ),
+    Container(
+      color: Colors.blue,
+      width: 100,
+      height: 100,
+      child: Text('Container 3'),
+    ),
+  ],
+),
+```
+
+|Code|Explanation|Result|
+|:---:|:---:|:---:|
+|`crossAxisAlignment: CrossAxisAlignment.start`| Place the children as close to the start of the cross axis as possible |![CrossAxisAlignment.start](/screenshots/cross_start.png)|
+|`crossAxisAlignment: CrossAxisAlignment.end`| Place the children as close to the end of the cross axis as possible |![CrossAxisAlignment.end](/screenshots/cross_end.png)|
+|`crossAxisAlignment: CrossAxisAlignment.center`| Place the children as close to the middle of the cross axis as possible |![CrossAxisAlignment.center](/screenshots/cross_center.png)|
+|`crossAxisAlignment: CrossAxisAlignment.stretch`| Stretch the children of the column to fill the cross axis |![CrossAxisAlignment.stretch](/screenshots/cross_stretch.png)|
