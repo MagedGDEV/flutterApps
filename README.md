@@ -199,3 +199,37 @@ Column(
 |`crossAxisAlignment: CrossAxisAlignment.end`| Place the children as close to the end of the cross axis as possible |![CrossAxisAlignment.end](/screenshots/cross_end.png)|
 |`crossAxisAlignment: CrossAxisAlignment.center`| Place the children as close to the middle of the cross axis as possible |![CrossAxisAlignment.center](/screenshots/cross_center.png)|
 |`crossAxisAlignment: CrossAxisAlignment.stretch`| Stretch the children of the column to fill the cross axis |![CrossAxisAlignment.stretch](/screenshots/cross_stretch.png)|
+
+**Row** is a widget that allows us to place widgets horizontally, one after the other.
+
+**Row** also takes **mainAxisAlignment** and **crossAxisAlignment** properties that work the same way as in **Column** widget, but in the opposite direction.
+
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Container(
+      color: Colors.white,
+      width: 100,
+      height: 100,
+      child: Text('Container 1'),
+    ),
+    Container(
+      color: Colors.red,
+      width: 100,
+      height: 100,
+      child: Text('Container 2'),
+    ),
+    Container(
+      color: Colors.blue,
+      width: 100,
+      height: 100,
+      child: Text('Container 3'),
+    ),
+  ],
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Row](/screenshots/iphone14ProMax_3.png)|![Android_Row](/screenshots/nexus6_3.png)|
