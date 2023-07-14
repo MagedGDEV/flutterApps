@@ -31,3 +31,66 @@ class MyApp extends StatelessWidget {
 
 **Hot Restart** is a another tool that allows us to restart the app from scratch. It is useful when we make changes to the **main()** method or when we add new dependencies to our **pubspec.yaml** file, and still doesn't take much time to restart the app as building the app from scratch.
 
+**Container** is a widget that acts as a `<div>` in HTML. It allows us to add padding, margin, border, background color, etc. to our widgets.
+> **Note:** Container is a widget that can only have one child widgeet, and when we don't specify a child widget, it tries to be as big as possible.
+
+if you added a widget as a child to contianer, it will be placed at the top left corner of the screen. and this may interfere with notches of some devices like the ones in iPhone mobiles.
+
+**SafeArea** is a widget that makes sure that the content of our app is visible on the screen. It is useful when we want to make sure that our app is not hidden behind the notch of the device.
+> To change the background color of the Container, we can use the **color** property of the Container widget.
+
+```dart
+SafeArea(
+  child: Container(
+    color: Colors.white,
+    child: Text(
+      'Hello World!',
+      style: TextStyle(fontSize: 25),
+    ),
+  ),
+),
+```
+
+|Before SafeArea|After SafeArea|
+|:---:|:---:|
+|![Before SafeArea](/screenshots/before_safe_area.png)|![After SafeArea](/screenshots/after_safe_area.png)|
+
+**Container** widget provides us with important properties that helps us in styling our apps such as:
+
+- **margin**
+  - It is the space outside the container.
+- **padding**
+  - It is the space inside the container, it moves the child widget inside the container.
+- width
+  - It is the width of the container.
+- height
+  - It is the height of the container.
+
+Both **margin** and **padding** take a **EdgeInsets** object as a value. **EdgeInsets** is a class that allows us to specify the amount of space we want to add to our widgets, and it has four different types of constructors:
+
+- **EdgeInsets.all()**
+  - It adds the same amount of space to all sides of the widget.
+- **EdgeInsets.symmetric()**
+  - It adds the same amount of space to the vertical and horizontal sides of the widget.
+- **EdgeInsets.fromLTRB()**
+  - It adds different amounts of space to the left, top, right, and bottom sides of the widget.
+- **EdgeInsets.only()**
+  - It adds different amounts of space to the left, top, right, and bottom sides of the widget.
+
+```dart
+Container(
+  color: Colors.white,
+  width: 120,
+  height: 100,
+  margin: EdgeInsets.only(left: 100),
+  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+  child: Text(
+    'Hello',
+    style: TextStyle(fontSize: 15),
+  ),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Container](/screenshots/iphone14ProMax_1.png)|![Android_Container](/screenshots/nexus6_1.png)|
