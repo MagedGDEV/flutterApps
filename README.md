@@ -94,3 +94,34 @@ Container(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_Container](/screenshots/iphone14ProMax_1.png)|![Android_Container](/screenshots/nexus6_1.png)|
+
+**Column** is a widget that allows us to place widgets vertically, one after the other.
+
+```dart
+Column(
+  children: [
+    Container(
+      color: Colors.white,
+      width: 100,
+      height: 100,
+      child: Text('Container 1'),
+    ),
+    Container(
+      color: Colors.red,
+      width: 100,
+      height: 100,
+      child: Text('Container 2'),
+    ),
+    Container(
+      color: Colors.blue,
+      width: 100,
+      height: 100,
+      child: Text('Container 3'),
+    ),
+  ],
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Column](/screenshots/iphone14ProMax_2.png)|![Android_Column](/screenshots/nexus6_2.png)|
