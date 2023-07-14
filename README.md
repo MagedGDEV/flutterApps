@@ -125,3 +125,40 @@ Column(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_Column](/screenshots/iphone14ProMax_2.png)|![Android_Column](/screenshots/nexus6_2.png)|
+
+Column widget takes a **mainAxisAlignment** property that allows us to align the widgets inside the column vertically. It takes a **MainAxisAlignment** object as a value, and it has different types of values:
+
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.start,
+  children: [
+    Container(
+      color: Colors.white,
+      width: 100,
+      height: 100,
+      child: Text('Container 1'),
+    ),
+    Container(
+      color: Colors.red,
+      width: 100,
+      height: 100,
+      child: Text('Container 2'),
+    ),
+    Container(
+      color: Colors.blue,
+      width: 100,
+      height: 100,
+      child: Text('Container 3'),
+    ),
+  ],
+),
+```
+
+|Code|Explanation|Result|
+|:---:|:---:|:---:|
+|`mainAxisAlignment: MainAxisAlignment.start`| Place the children as close to the start of the main axis as possible |![MainAxisAlignment.start](/screenshots/iphone14ProMax_2.png)|
+|`mainAxisAlignment: MainAxisAlignment.end`| Place the children as close to the end of the main axis as possible |![MainAxisAlignment.end](/screenshots/main_end.png)|
+|`mainAxisAlignment: MainAxisAlignment.center`| Place the children as close to the middle of the main axis as possible |![MainAxisAlignment.center](/screenshots/main_center.png)|
+|`mainAxisAlignment: MainAxisAlignment.spaceEvenly`| Place the free space evenly between the children as well as before and after the first and last child |![MainAxisAlignment.spaceEvenly](/screenshots/main_space_evenly.png)|
+|`mainAxisAlignment: MainAxisAlignment.spaceBetween`| Place the free space evenly between the children |![MainAxisAlignment.spaceBetween](/screenshots/main_space_between.png)|
+|`mainAxisAlignment: MainAxisAlignment.spaceAround`| Place the free space evenly between the children as well as half of that space before and after the first and last child |![MainAxisAlignment.spaceAround](/screenshots/main_space_around.png)|
