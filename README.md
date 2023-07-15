@@ -18,6 +18,10 @@ This is a simple business card app, that shows my name, my job title, my email, 
 - **ListTile**
 - **Divider**
 
+|iOS|Android|
+|:---:|:---:|
+|![iOS](/screenshots/iphone14ProMax_10.png)|![Android](/screenshots/nexus6_10.png)|
+
 ## Tutorial
 
 **Hot Reload** is an important tool for Flutter developers. It allows you to make changes to your code and see the results instantly, without restarting your application or losing its state.
