@@ -128,6 +128,8 @@ Column(
 
 Column widget takes a **mainAxisAlignment** property that allows us to align the widgets inside the column vertically. It takes a **MainAxisAlignment** object as a value, and it has different types of values:
 
+**SizedBox** is a widget that allows us to add space between widgets.
+
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.start,
@@ -250,3 +252,30 @@ CircleAvatar(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_CircleAvatar](/screenshots/iphone14ProMax_4.png)|![Android_CircleAvatar](/screenshots/nexus6_4.png)|
+
+To style the text, we can use **TextStyle** class. It has different properties that allows us to style the text such as:
+
+- **color**
+  - It allows us to specify the color of the text.
+- **fontSize**
+  - It allows us to specify the size of the text.
+- **fontWeight**
+  - It allows us to specify the weight of the text.
+- **fontStyle**
+  - It allows us to specify the style of the text.
+- **fontFamily**
+  - It allows us to specify the font family of the text.
+
+```dart
+Text(
+  'Maged Elesseily',
+  style: TextStyle(
+    fontSize: 40,
+    color: Colors.white,
+    fontWeight: FontWeight.bold),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_TextStyle](/screenshots/iphone14ProMax_5.png)|![Android_TextStyle](/screenshots/nexus6_5.png)|

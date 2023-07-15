@@ -20,6 +20,13 @@ class MyApp extends StatelessWidget {
               radius: 60,
               backgroundImage: AssetImage('images/me.PNG'),
             ),
+            Text(
+              'Maged Elesseily',
+              style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
           ],
         )),
       ),
