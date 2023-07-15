@@ -233,3 +233,20 @@ Row(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_Row](/screenshots/iphone14ProMax_3.png)|![Android_Row](/screenshots/nexus6_3.png)|
+
+**CircleAvatar** is a widget that allows us to add circular images to our apps, it can be used to add profile pictures to our apps.
+
+>**radius** property of the **CircleAvatar** widget allows us to specify the radius of the circle.
+
+>**backgroundImage** property of the **CircleAvatar** widget allows us to specify the image that we want to use as a background image for the circle.
+
+```dart
+CircleAvatar(
+  radius: 60,
+  backgroundImage: AssetImage('images/me.PNG'),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_CircleAvatar](/screenshots/iphone14ProMax_4.png)|![Android_CircleAvatar](/screenshots/nexus6_4.png)|
