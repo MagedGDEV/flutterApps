@@ -37,50 +37,36 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Source Sans 3'),
             ),
-            Container(
-              color: Colors.white,
+            Card(
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.phone,
-                    color: Colors.teal,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    '+20 12 1102 8846',
-                    style: TextStyle(
-                        color: Colors.teal.shade900,
-                        fontSize: 20,
-                        fontFamily: 'Source Sans 3'),
-                  ),
-                ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  '+20 12 1102 8846',
+                  style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontSize: 20,
+                      fontFamily: 'Source Sans 3'),
+                ),
               ),
             ),
-            Container(
-              color: Colors.white,
+            Card(
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.email,
-                    color: Colors.teal,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'maged.work0@gmail.com',
-                    style: TextStyle(
-                        color: Colors.teal.shade900,
-                        fontSize: 20,
-                        fontFamily: 'Source Sans 3'),
-                  ),
-                ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  'maged.work0@gmail.com',
+                  style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontSize: 20,
+                      fontFamily: 'Source Sans 3'),
+                ),
               ),
             ),
           ],

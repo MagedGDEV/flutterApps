@@ -305,6 +305,10 @@ Text(
 
 **Icon** is a widget that allows us to add icons to our apps, it better that using images as icons because it is easier to change the color of the icon, and it is easier to change the size of the icon.
 
+You can find all the icons that are available in Flutter documentation [here](https://api.flutter.dev/flutter/material/Icons-class.html).
+
+```dart
+
 >**SizedBox** is a widget that allows us to add space between widgets.
 
 ```dart
@@ -336,3 +340,33 @@ Container(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_Icon](/screenshots/iphone14ProMax_7.png)|![Android_Icon](/screenshots/nexus6_7.png)|
+
+**Card** is a widget that allows us to add cards to our apps, it is a widget that has a white background as a default, and it has rounded corners as a default.
+
+Some widgets like **Card** doesn't have a **padding** property, so we need to wrap them with a **Padding** widget to be able to add padding to them.
+
+Common used widgets with **Card** widget are **ListTile** a widget that allows us to add a list item to our app, and it has a **leading** property that allows us to add an icon to the left of the list item, and it has a **title** property that allows us to add a title to the list item, and it has a default padding around it.
+
+```dart
+Card(
+  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+  child: ListTile(
+    leading: Icon(
+      Icons.email,
+      color: Colors.teal,
+    ),
+    title: Text(
+      'maged.work0@gmail.com',
+      style: TextStyle(
+        color: Colors.teal.shade900,
+        fontSize: 20,
+        fontFamily: 'Source Sans 3'
+      ),
+    ),
+  ),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Card](/screenshots/iphone14ProMax_8.png)|![Android_Card](/screenshots/nexus6_8.png)|
