@@ -126,9 +126,7 @@ Column(
 |:---:|:---:|
 |![iOS_Column](/screenshots/iphone14ProMax_2.png)|![Android_Column](/screenshots/nexus6_2.png)|
 
-Column widget takes a **mainAxisAlignment** property that allows us to align the widgets inside the column vertically. It takes a **MainAxisAlignment** object as a value, and it has different types of values:
-
-**SizedBox** is a widget that allows us to add space between widgets.
+Column widget takes a **mainAxisAlignment** property that allows us to align the widgets inside the column vertically. It takes a **MainAxisAlignment** object as a value, and it has different types of values.
 
 ```dart
 Column(
@@ -167,7 +165,7 @@ Column(
 
 To set width of the container to the maximum width of the screen, we can use `double.infinity` as a value for the **width** property of the Container widget.
 
-Column widget takes a **crossAxisAlignment** property that allows us to align the widgets inside the column horizontally. It takes a **CrossAxisAlignment** object as a value, and it has different types of values:
+Column widget takes a **crossAxisAlignment** property that allows us to align the widgets inside the column horizontally. It takes a **CrossAxisAlignment** object as a value, and it has different types of values.
 
 ```dart
 Column(
@@ -304,3 +302,37 @@ Text(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_FontFamily](/screenshots/iphone14ProMax_6.png)|![Android_FontFamily](/screenshots/nexus6_6.png)|
+
+**Icon** is a widget that allows us to add icons to our apps, it better that using images as icons because it is easier to change the color of the icon, and it is easier to change the size of the icon.
+
+>**SizedBox** is a widget that allows us to add space between widgets.
+
+```dart
+Container(
+  color: Colors.white,
+  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+  padding: EdgeInsets.all(10),
+    child: Row(
+      children: [
+        Icon(
+          Icons.email,
+          color: Colors.teal,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Text(
+          'maged.work0@gmail.com',
+          style: TextStyle(
+          color: Colors.teal.shade900,
+          fontSize: 20,
+          fontFamily: 'Source Sans 3'),
+      ),
+    ],
+  ),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Icon](/screenshots/iphone14ProMax_7.png)|![Android_Icon](/screenshots/nexus6_7.png)|
