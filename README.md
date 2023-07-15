@@ -279,3 +279,28 @@ Text(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_TextStyle](/screenshots/iphone14ProMax_5.png)|![Android_TextStyle](/screenshots/nexus6_5.png)|
+
+To add donwloaded font family to our app, we need to add the font family to the **pubspec.yaml** file, and then we need to add the font family to the **TextStyle** class.
+> You can use font families from [Google Fonts](https://fonts.google.com/) for free.
+
+```yaml
+fonts:
+  - family: Pacifico
+    fonts:
+      - asset: fonts/Pacifico-Regular.ttf
+```
+
+```dart
+Text(
+  'Maged Elesseily',
+  style: TextStyle(
+    fontSize: 40,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Pacifico'),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_FontFamily](/screenshots/iphone14ProMax_6.png)|![Android_FontFamily](/screenshots/nexus6_6.png)|

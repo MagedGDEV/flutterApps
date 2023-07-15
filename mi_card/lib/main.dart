@@ -23,9 +23,19 @@ class MyApp extends StatelessWidget {
             Text(
               'Maged Elesseily',
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Pacifico'),
+            ),
+            Text(
+              'Flutter Developer',
+              style: TextStyle(
+                  fontSize: 20,
+                  letterSpacing: 5.5,
+                  color: Colors.teal.shade100,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Source Sans 3'),
             ),
           ],
         )),
