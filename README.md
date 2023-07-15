@@ -1,6 +1,24 @@
 # mi_card
 
-This is a simple business card app.
+This is a simple business card app, that shows my name, my job title, my email, and my phone number, and it teaches us about the following:
+
+- **Hot Reload** & **Hot Restart**
+- **Container**
+- **SafeArea**
+- **Margin** & **Padding**
+- **Column** & **Row**
+  - **mainAxisAlignment**
+  - **crossAxisAlignment**
+- **CircleAvatar**
+- **TextStyle**
+  - Adding downloaded font family to our app
+- **Icon**
+- **SizedBox**
+- **Card**
+- **ListTile**
+- **Divider**
+
+## Tutorial
 
 **Hot Reload** is an important tool for Flutter developers. It allows you to make changes to your code and see the results instantly, without restarting your application or losing its state.
 
@@ -307,9 +325,7 @@ Text(
 
 You can find all the icons that are available in Flutter documentation [here](https://api.flutter.dev/flutter/material/Icons-class.html).
 
-```dart
-
->**SizedBox** is a widget that allows us to add space between widgets.
+> **SizedBox** is a widget that allows us to add space between widgets.
 
 ```dart
 Container(
@@ -370,3 +386,20 @@ Card(
 |iOS|Android|
 |:---:|:---:|
 |![iOS_Card](/screenshots/iphone14ProMax_8.png)|![Android_Card](/screenshots/nexus6_8.png)|
+
+**Divider** is a widget that allows us to add a horizontal line to our apps, it is a widget that has a grey color as a default, and it has a margin around it as a default, this is like the `<hr>` tag in HTML.
+
+```dart
+SizedBox(
+  height: 20,
+  width: 150,
+  child: Divider(
+    thickness: 0.75,
+    color: Colors.teal.shade100,
+  ),
+),
+```
+
+|iOS|Android|
+|:---:|:---:|
+|![iOS_Divider](/screenshots/iphone14ProMax_9.png)|![Android_Divider](/screenshots/nexus6_9.png)|
