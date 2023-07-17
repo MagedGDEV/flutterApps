@@ -46,3 +46,75 @@ Row(
 |iOS|Android|
 |---|---|
 |![iOS_flex](screenshots/iphone14ProMax_3.png)|![Android_flex](screenshots/nexus6_3.png)|
+
+**Text Button** widget is used to create a simple button without any background color, elevation or shadows, Buttons are used to trigger an action, like navigating to a new screen, or submitting a form.
+
+**onPressed** property in the `TextButton` widget is used to specify the action that should be triggered when the button is pressed.
+
+```dart
+TextButton(
+  onPressed: () {
+    print('Left button pressed');
+  },
+  child: Image.asset('images/dice1.png'),
+),
+```
+
+When the left dice (**Text Button**) is pressed, the console will print:
+`Flutter: Left button pressed`
+
+Before we start changing the dice images when the button is pressed, we need to learn about the differences between **Stateless** and **Stateful** widgets.
+
+|Stateless|Stateful|
+|---|---|
+| Fields should be immutable (Do not change over time) | Fields can be mutable (Change over time) |
+| Static widgets | Dynamic widgets |
+| **Ex:** Text, Icon, Image, Container | **Ex:** Checkbox, Radio, Slider, Form |  
+
+So we need to use our buttons widget inside a **Stateful** widget to change the dice images when the button is pressed. To inform a Flutter app that the state of the widget has changed, we need to use the `setState()` method as shown below.
+
+```dart
+class DicePage extends StatefulWidget {
+  const DicePage({super.key});
+
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  leftDiceNumber = 4;
+                });
+              },
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+            ),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('Right button pressed');
+              },
+              child: Image.asset('images/dice1.png'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Once the left button is pressed, `setState()` method will be called to inform that the state of the widget has changed, and the `build()` method will be called again to rebuild the widget with the new state causing the **dice1** image to be replaced with **dice4** image.
+
+|iOS|Android|
+|---|---|
+|![iOS_stateful](screenshots/iphone14ProMax_4.gif)|![Android_stateful](screenshots/nexus6_4.gif)|
