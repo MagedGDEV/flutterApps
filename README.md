@@ -1,5 +1,21 @@
 # dicee
 
+This is a simple dice app that generates a random number between 1 and 6 when the user presses the dice to roll it.
+
+it teaches use about:
+
+- **OverFlow** & **Expanded**
+- **flex** property
+- **Text Button**
+- **Stateless** & **Stateful**
+- **setState()**
+
+|iOS|Android|
+|---|---|
+|![iOS](screenshots/iphone14ProMax_0.gif)|![Android](screenshots/nexus6_0.gif)|
+
+## Tutorial
+
 Adding images in the app is very easy, But we need to manage the size of the images in the app. so it can be displayed properly in all devices as in the example below.
 
 Instead of using the `Image` widget, we can use the `Image.asset` widget to display the images in the app for better code readability.
