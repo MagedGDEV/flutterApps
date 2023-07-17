@@ -2,7 +2,7 @@
 
 This is a simple dice app that generates a random number between 1 and 6 when the user presses the dice to roll it.
 
-it teaches use about:
+it teaches us about:
 
 - **OverFlow** & **Expanded**
 - **flex** property
