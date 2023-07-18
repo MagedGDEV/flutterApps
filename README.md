@@ -14,6 +14,14 @@ it teaches us about:
 |---|---|
 |![iOS](screenshots/iphone14ProMax_0.gif)|![Android](screenshots/nexus6_0.gif)|
 
+## magic_8_ball
+
+This is a simple magic 8 ball app that generates a random answer when the user presses the ball, added as a challenge to ensure that we understood the concepts.
+
+|iOS|Android|
+|---|---|
+|![iOS](screenshots/iphone14ProMax_5.gif)|![Android](screenshots/nexus6_5.gif)|
+
 ## Tutorial
 
 Adding images in the app is very easy, But we need to manage the size of the images in the app. so it can be displayed properly in all devices as in the example below.
