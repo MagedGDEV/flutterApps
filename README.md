@@ -16,7 +16,7 @@ This is a simple app that displays an image, and it teaches us about the followi
 
 ## i_am_poor (Challenge)
 
-The i_am_poor app is the same as the i_am_rich app, but it displays a different image, added as challenge to ensure that we understand the concepts.
+The i_am_poor app is the same as the i_am_rich app, but it displays a different image, added as challenge to ensure that we understood the concepts.
 
 | iOS | Android |
 |--|--|
