@@ -145,3 +145,35 @@ Slider(
 |iOS|Android|
 |---|---|
 |![iOS_Slider](/screenshots/iphone14ProMax_5.png)|![Android_Slider](/screenshots/nexus6_5.png)|
+
+We can create customaizable widgets by modifying the ***Theme*** of the widget. For example to modify the shape of the slider, we can use the ***SliderTheme*** widget and set the ***data*** property to a ***SliderThemeData*** object, and you can find extra properties to modify in the theme data than the widget itself.
+
+```dart
+SliderTheme(
+  data: const SliderThemeData(
+  activeTrackColor: Colors.white,
+  thumbColor: kActiveColor,
+  overlayColor: kOverlayColor,
+  trackHeight: 2,
+  thumbShape:
+    RoundSliderThumbShape(enabledThumbRadius: 15.0),
+  overlayShape:
+    RoundSliderOverlayShape(overlayRadius: 30.0),
+  ),
+  child: Slider(
+    value: height.toDouble(),
+    min: kMinHeight,
+    max: kMaxHeight,
+    inactiveColor: kInactiveSliderColor,
+    onChanged: (double newValue) {
+      setState(() {
+        height = newValue.round();
+      });
+    },
+  ),
+),
+```
+
+|iOS|Android|
+|---|---|
+|![iOS_SliderTheme](/screenshots/iphone14ProMax_6.png)|![Android_SliderTheme](/screenshots/nexus6_6.png)|
