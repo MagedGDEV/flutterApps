@@ -1,16 +1,7 @@
 # bmi_calculator
 
-A new Flutter project.
+In this app, we create a BMI calculator app that calculates the BMI of a person based on their height and weight. The app has two screens, the first screen is where the user enters their height and weight, and the second screen is where the user sees their BMI and a message based on their BMI.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|iOS|Android|
+|---|---|
+|![iOS](/screenshots/iphone14ProMax_0.gif)|![Android](/screenshots/nexus6_0.gif)|

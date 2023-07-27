@@ -1,5 +1,13 @@
 # bmi_calculator
 
+In this app, we create a BMI calculator app that calculates the BMI of a person based on their height and weight. The app has two screens, the first screen is where the user enters their height and weight, and the second screen is where the user sees their BMI and a message based on their BMI.
+
+|iOS|Android|
+|---|---|
+|![iOS](/screenshots/iphone14ProMax_0.gif)|![Android](/screenshots/nexus6_0.gif)|
+
+## Tutorial
+
 **ThemeData** is used to configure a theme for your app. The theme data is accessible to all widgets within the app. You can use it to configure the appearance of your app, such as colors, text styles, and fonts. You can also use it to configure the size, color, background color, etc. of the app bar, bottom app bar, icon themes, button themes, etc, and have a consistent look and feel across the app.
 
 To add a theme to your app, you need to wrap the root widget of your app in a **MaterialApp** widget and set the theme property of the MaterialApp widget to a ThemeData object.
@@ -177,3 +185,59 @@ SliderTheme(
 |iOS|Android|
 |---|---|
 |![iOS_SliderTheme](/screenshots/iphone14ProMax_6.png)|![Android_SliderTheme](/screenshots/nexus6_6.png)|
+
+One of the powerful features of Flutter is that everything is open source, and you can deep dive into the source code of any widget and see how it is implemented. and since Flutter documentation is against creating more than one floating action button, we can create our own floating action button using the source code of the original floating action button and modify it to our needs. And still follow flutter documentation for not creating more than one floating action button.
+
+Using **RawMaterialButton**, we can create our customized button by using [documentation](https://api.flutter.dev/flutter/material/RawMaterialButton-class.html).
+
+```dart
+class RoundIconButton extends StatelessWidget {
+  final IconData icon;
+  final Function() onPress;
+  const RoundIconButton({super.key, required this.icon, required this.onPress});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: onPress,
+      elevation: 0.0,
+      shape: const CircleBorder(),
+      constraints: const BoxConstraints.tightFor(
+        width: 56,
+        height: 56,
+      ),
+      fillColor: kRoundIconButtonColor,
+      child: Icon(icon),
+    );
+  }
+}
+```
+
+|iOS|Android|
+|---|---|
+|![iOS_RoundIconButton](/screenshots/iphone14ProMax_7.png)|![Android_RoundIconButton](/screenshots/nexus6_7.png)|
+
+To move between two pages you can use **Navigator** widget, and you can use **Navigator.push** to push a new page to the stack, and **Navigator.pop** to pop the current page from the stack.
+
+```dart
+GestureDetector(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const Result(),
+      ),
+    );
+  },
+  child: Container(
+    height: kBottomContainerHeight,
+    margin: const EdgeInsets.only(top: 10),
+    color: kActiveColor,
+    child: const Text('CALCULATE'),
+  ),
+),
+```
+
+|iOS|Android|
+|---|---|
+|![iOS_Navigator](/screenshots/iphone14ProMax_8.gif)|![Android_Navigator](/screenshots/nexus6_8.gif)|
