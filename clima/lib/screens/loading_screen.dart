@@ -17,30 +17,25 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   Future<void> getLocation() async {
-    await askPermission();
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.low);
     location = position.toString();
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    getLocation();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                //Get the current location
-                setState(() {
-                  getLocation();
-                });
-              },
-              child: const Text('Get Location'),
-            ),
-            Text('location: ${location == null ? '--' : location}')
-          ],
+        child: Text(
+          'location: ${location ?? '--'}',
+          textAlign: TextAlign.center,
         ),
       ),
     );

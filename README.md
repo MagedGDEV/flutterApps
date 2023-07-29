@@ -44,3 +44,23 @@ Future<void> getLocation() async {
 |iOS|Android|
 |---|---|
 |![iOS_location](/screenshots/iphone14ProMax_1.gif)|![Android_location](/screenshots/nexus6_1.gif)|
+
+**Widget lifecycle** is the state of the widget at a particular time. The widget lifecycle is divided into two parts:
+
+- **StatelessWidget** lifecycle
+
+  - **`build()`** is called when the widget is inserted into the widget tree.
+
+- **StatefulWidget** lifecycle
+
+  - **`initState()`** is called when the widget is inserted into the widget tree.
+  - **`build()`** is called when the widget is inserted into the widget tree.
+  - **`deactivate()`** is called when the widget is removed from the widget tree temporarily.
+  - ...
+
+```dart
+void initState() {
+  super.initState();
+  getLocation();
+}
+```
