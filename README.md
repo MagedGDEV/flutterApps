@@ -64,3 +64,26 @@ void initState() {
   getLocation();
 }
 ```
+
+**[http](https://pub.dev/packages/http/install)** is a dart package developed by flutter team that allows you to make HTTP requests to a server. we can use it to get data from the internet.
+
+To request data from the internet, we use **`get()`** method.
+
+```dart
+Future<void> getData() async {
+  Response response = await get(
+    Uri.parse(
+      'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=22946be908043815a1407391d949a5e0',
+    ),
+  );
+  print(response.body);
+}
+```
+
+**`reposne.body`** is the data that we get from the internet, if you want to check if the request was successful or not, you can check the **`response.statusCode`** more information about the status code can be found [here](https://www.restapitutorial.com/httpstatuscodes.html).
+
+**Output:**
+
+```bash
+flutter: {"coord":{"lon":139,"lat":35},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":298.32,"feels_like":299.06,"temp_min":298.32,"temp_max":298.32,"pressure":1014,"humidity":83},"visibility":10000,"wind":{"speed":0.45,"deg":181,"gust":1.34},"clouds":{"all":21},"dt":1690723400,"sys":{"type":2,"id":2019346,"country":"JP","sunrise":1690660271,"sunset":1690710572},"timezone":32400,"id":1851632,"name":"Shuzenji","cod":200}
+```
