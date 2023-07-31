@@ -1,5 +1,22 @@
 # clima
 
+clima is a weather app that shows the weather of the current location or any other city, using [openweathermap](https://openweathermap.org/) API.
+
+In this project we are going to learn about:
+
+- How to get the location of the device using **geolocator**.
+- How to make HTTP requests to a server.
+- How to decode JSON data into dart objects.
+- How to pass data to a Stateful widget.
+- How to pass data back to the previous screen.
+- **TextField** widget.
+- Widget lifecycle.
+- **flutter_spinkit** package.
+
+|iOS|Android|
+|--|--|
+|![iOS](/screenshots/iphone14ProMax_0.gif)|![Android](/screenshots/nexus6_0.gif)|
+
 **[geolocator](https://pub.dev/packages/geolocator/install)** is a dart package that allows you to get the location of your device, to be able to use it in our applications. we need to add permissions to both Android and iOS.
 
 - Android
@@ -171,6 +188,8 @@ class _LocationScreenState extends State<LocationScreen> {
 
 **TextField** is a widget that allows the user to enter a single line of text, to style it we can use **`InputDecoration`** property, where we can add icons, hint text, and more.
 
+**`onChanged()`** property allows us to get the data user entered and it's triggered every time user makes changes.
+
 ```dart
 TextField(
   style: TextStyle(color: Colors.black),
@@ -190,9 +209,27 @@ TextField(
       color: Colors.white,
     ),
   ),
+  onChanged: (value) {
+  cityName = value;
+  },
 ),
 ```
 
 |iOS|Android|
 |--|--|
 |![iOS_textfield](/screenshots/iphone14ProMax_3.png)|![Android_textfield](/screenshots/nexus6_3.png)|
+
+Flutter gives us the ability to pass data when screen is popped, we can use **`Navigator.pop()`** method to pass data to the previous screen.
+
+```dart
+Navigator.pop(context, cityName);
+```
+
+And to get the data in the previous screen we do the following:
+
+```dart
+var typedName = await Navigator.push(context,
+  MaterialPageRoute(builder: (context) {
+    return CityScreen();
+}));
+```
