@@ -117,3 +117,82 @@ import 'dart:convert';
   }
 ```
 
+**[flutter_spinkit](https://pub.dev/packages/flutter_spinkit/install)** is a flutter package that provides a collection of loading indicators animated with flutter.
+
+```dart
+Scaffold(
+  body: Center(
+  child: SpinKitDoubleBounce(
+    color: Colors.white,
+    size: 50,
+    ),
+  ),
+);
+```
+
+|iOS|Android|
+|--|--|
+|![iOS_spinkit](/screenshots/iphone14ProMax_2.gif)|![Android_spinkit](/screenshots/nexus6_2.gif)|
+
+To access data from Stateful widget into State class we need to use **`widget`** keyword.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:clima/utilities/constants.dart';
+
+class LocationScreen extends StatefulWidget {
+  final dynamic locationWeather;
+
+  const LocationScreen({super.key, this.locationWeather});
+
+  @override
+  _LocationScreenState createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  int? temperature;
+  int? condition;
+  String? cityName;
+
+  void updateUI(dynamic weatherData) {
+    double temp = weatherData['main']['temp'];
+    temperature = temp.toInt();
+    cityName = weatherData['name'];
+    condition = weatherData['weather'][0]['id'];
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    updateUI(widget.locationWeather);
+  }
+}
+```
+
+**TextField** is a widget that allows the user to enter a single line of text, to style it we can use **`InputDecoration`** property, where we can add icons, hint text, and more.
+
+```dart
+TextField(
+  style: TextStyle(color: Colors.black),
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: Colors.white,
+    hintText: 'Enter City Name',
+    hintStyle: TextStyle(color: Colors.grey),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(10),
+      ),
+      borderSide: BorderSide.none,
+    ),
+    icon: Icon(
+      Icons.location_city,
+      color: Colors.white,
+    ),
+  ),
+),
+```
+
+|iOS|Android|
+|--|--|
+|![iOS_textfield](/screenshots/iphone14ProMax_3.png)|![Android_textfield](/screenshots/nexus6_3.png)|
