@@ -87,3 +87,33 @@ Future<void> getData() async {
 ```bash
 flutter: {"coord":{"lon":139,"lat":35},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":298.32,"feels_like":299.06,"temp_min":298.32,"temp_max":298.32,"pressure":1014,"humidity":83},"visibility":10000,"wind":{"speed":0.45,"deg":181,"gust":1.34},"clouds":{"all":21},"dt":1690723400,"sys":{"type":2,"id":2019346,"country":"JP","sunrise":1690660271,"sunset":1690710572},"timezone":32400,"id":1851632,"name":"Shuzenji","cod":200}
 ```
+
+Most famous response formats are **JSON** and **XML**.
+
+**JSON** stands for JavaScript Object Notation, it is a lightweight format for storing and transporting data. JSON is often used when data is sent from a server to a web page.
+
+**XML** stands for eXtensible Markup Language, it is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+
+**JSON** is more popular than **XML**.
+
+What we are using in this project is **JSON**, and to be able to decode json data into dart objects we need to use dart package called **`dart:convert`** that provides encoding and decoding of JSON.
+
+**`jsonDecode()`** is used to decode json data into dart objects.
+
+```dart
+import 'dart:convert';
+  Future<void> getData() async {
+    http.Response response = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=22946be908043815a1407391d949a5e0'));
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      var decodedData = jsonDecode(data);
+      double temperature = decodedData['main']['temp'];
+      print(temperature);
+
+    } else {
+      print(response.statusCode);
+    }
+  }
+```
+
