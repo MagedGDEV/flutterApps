@@ -14,7 +14,7 @@ it teaches us about:
 |---|---|
 |![iOS](screenshots/iphone14ProMax_0.gif)|![Android](screenshots/nexus6_0.gif)|
 
-## magic_8_ball
+## magic_8_ball (Challenge)
 
 This is a simple magic 8 ball app that generates a random answer when the user presses the ball, added as a challenge to ensure that we understood the concepts.
 
