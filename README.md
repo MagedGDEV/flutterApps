@@ -20,7 +20,7 @@ In this branch we are going to learn about:
 |--|--|
 |![iOS](/screenshots/iphone14ProMax_0.gif)|![Android](/screenshots/nexus6_0.gif)|
 
-## bitcoin_ticker
+## bitcoin_ticker (Challenge)
 
 This app shows the current price of cryptocurrencies in different currencies, using [coinapi](https://www.coinapi.io/) API.
 
