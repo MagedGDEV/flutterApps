@@ -2,7 +2,7 @@
 
 clima is a weather app that shows the weather of the current location or any other city, using [openweathermap](https://openweathermap.org/) API.
 
-In this project we are going to learn about:
+In this branch we are going to learn about:
 
 - How to get the location of the device using **geolocator**.
 - How to make HTTP requests to a server.
@@ -12,10 +12,23 @@ In this project we are going to learn about:
 - **TextField** widget.
 - Widget lifecycle.
 - **flutter_spinkit** package.
+- **DropdownButton** widget.
+- **CupertinoPicker** widget.
+- How to give different styles to different operating systems.
 
 |iOS|Android|
 |--|--|
 |![iOS](/screenshots/iphone14ProMax_0.gif)|![Android](/screenshots/nexus6_0.gif)|
+
+## bitcoin_ticker
+
+This app shows the current price of cryptocurrencies in different currencies, using [coinapi](https://www.coinapi.io/) API.
+
+|iOS|Android|
+|--|--|
+|![iOS](/screenshots/iphone14ProMax_7.gif)|![Android](/screenshots/nexus6_7.gif)|
+
+## Tutorial
 
 **[geolocator](https://pub.dev/packages/geolocator/install)** is a dart package that allows you to get the location of your device, to be able to use it in our applications. we need to add permissions to both Android and iOS.
 
@@ -233,3 +246,79 @@ var typedName = await Navigator.push(context,
     return CityScreen();
 }));
 ```
+
+**DropdownButton** is a widget that allows us to select a value from a list of values, **`value`** property is used to set the default value, **`items`** property is used to set the list of values, **`onChanged`** property is used to get the value that user selected.
+
+```dart
+DropdownButton<String>(
+  value: selectedCurrency,
+  onChanged: (value) {
+    setState(() {
+      selectedCurrency = value ?? 'USD';
+    });
+  },
+  items: getDropdownItems(),
+),
+
+List<DropdownMenuItem<String>> getDropdownItems() {
+    List<DropdownMenuItem<String>> dropdownItems = [];
+    for (String currency in currenciesList) {
+      dropdownItems.add(
+        DropdownMenuItem(
+          child: Text(currency),
+          value: currency,
+        ),
+      );
+    }
+    return dropdownItems;
+  }
+```
+
+|iOS|Android|
+|--|--|
+|![iOS_dropdown](/screenshots/iphone14ProMax_4.gif)|![Android_dropdown](/screenshots/nexus6_4.gif)|
+
+Flutter provides us with a widget called **`CupertinoPicker`** to create our application with iOS style, it's similar to **`DropdownButton`** widget.
+
+```dart
+
+CupertinoPicker(
+  children: getCupertinoPickerItems(),
+  onSelectedItemChanged: (selectedIndex) {
+    selectedCurrency = currenciesList[selectedIndex];
+  },
+  itemExtent: 32.0,
+),
+
+List<Text> getCupertinoPickerItems() {
+  List<Text> cupertinoPickerItems = [];
+  for (String curreny in currenciesList) {
+    cupertinoPickerItems.add(Text(curreny));
+  }
+  return cupertinoPickerItems;
+}
+```
+
+|iOS|Android|
+|--|--|
+|![iOS_cupertinoPicker](/screenshots/iphone14ProMax_5.gif)|![Android_cupertinoPicker](/screenshots/nexus6_5.gif)|
+
+Flutter gives us the power to gives different styles to different operating systems, using **`dart:io`**
+
+**`show`** keyword is used to get from package **`dart:io`** only **Platform** class and don't import the whole package.
+
+```dart
+import 'dart:io' show Platform;
+
+Container(
+  height: 150.0,
+  alignment: Alignment.center,
+  padding: const EdgeInsets.only(bottom: 30.0),
+  color: Colors.lightBlue,
+  child: Platform.isIOS ? iOSPicker() : androidDropdown(),
+),
+```
+
+|iOS|Android|
+|--|--|
+|![iOS_platform](/screenshots/iphone14ProMax_6.gif)|![Android_platform](/screenshots/nexus6_6.gif)|
