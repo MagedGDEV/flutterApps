@@ -3,7 +3,7 @@ import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: Xylophone(),
@@ -22,13 +22,13 @@ class Xylophone extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.max,
         children: [
-          audioButton(color: Colors.red, soundNumber: 1),
-          audioButton(color: Colors.orange, soundNumber: 2),
-          audioButton(color: Colors.yellow, soundNumber: 3),
-          audioButton(color: Colors.teal, soundNumber: 4),
-          audioButton(color: Colors.green, soundNumber: 5),
-          audioButton(color: Colors.blue, soundNumber: 6),
-          audioButton(color: Colors.deepPurple, soundNumber: 7),
+          audioButton(color: Colors.blue.shade200, soundNumber: 1),
+          audioButton(color: Colors.blue.shade300, soundNumber: 2),
+          audioButton(color: Colors.blue.shade400, soundNumber: 3),
+          audioButton(color: Colors.blue.shade500, soundNumber: 4),
+          audioButton(color: Colors.blue.shade600, soundNumber: 5),
+          audioButton(color: Colors.blue.shade700, soundNumber: 6),
+          audioButton(color: Colors.blue.shade800, soundNumber: 7),
         ],
       ),
     );
