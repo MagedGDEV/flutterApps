@@ -1,4 +1,4 @@
-# Xylophone
+# xylophone
 
 This app plays different sounds when the user clicks on the different buttons. The sounds are played using the [audioplayers](https://pub.dev/packages/audioplayers) package, to act as a xylophone.
 
