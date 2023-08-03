@@ -26,3 +26,30 @@ To navigate to a named route, use the **`Navigator.pushNamed()`** method. This m
 ```dart
 Navigator.pushNamed(context, LoginScreen.id);
 ```
+
+**Hero** widget is used to create a hero animation between two screens. Hero animations are animations between a tag in one screen to a tag in another screen. The tag can be any widget, but it's usually an image or a text.
+
+```dart
+
+// welcome_screen.dart
+Hero(
+  tag: 'logo',
+  child: SizedBox(
+    height: 60.0,
+    child: Image.asset('images/logo.png'),
+  ),
+),
+
+// login_screen.dart
+Hero(
+  tag: 'logo',
+  child: SizedBox(
+    height: 200.0,
+    child: Image.asset('images/logo.png'),
+  ),
+),
+```
+
+|iOS|Android|
+|---|---|
+|![Hero Animation iOS](/screenshots/iphone14ProMax_1.gif)|![Hero Animation Android](/screenshots/nexus6_1.gif)|
