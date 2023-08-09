@@ -274,3 +274,92 @@ To setup Firebase in your project, you need to create a new project in the [Fire
 
 > I Faced an error while running **`pod install`** command, the error was saying `CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/0/3/5/Firebase/9.6.0/Firebase.podspec.json Response: SSL connect error` and after searching for a solution I found that "this problem is specific to Egypt as ISPs blocked jsdelivr" in this [issue](https://github.com/CocoaPods/CocoaPods/issues/11939), I fixed it by following the instructions in this [comment](https://github.com/CocoaPods/CocoaPods/issues/10078#issuecomment-696481185).
 
+After setting up Firebase in your project, you can use the Firebase services in your app. In this project we are using **Firebase Authentication** to authenticate the users, and **Cloud Firestore** to store the messages. you can find all plugins for Firebase in this [link](https://github.com/truongsinh/flutter-plugins/blob/master/FlutterFire.md).
+
+> When trying to run app on Android after adding packages for Firebase Authentication and Cloud Firestore, we need to update the following in **`android/app/build.gradle`** file.
+
+```gradle
+...
+defaultConfig {
+  minSdkVersion 19
+  multiDexEnabled true
+  ...
+}
+...
+dependencies {
+  implementation 'androidx.multidex:multidex:2.0.1'
+  ...
+}
+```
+
+To set the **TextField** to display specific keyboard type, we can use the **`keyboardType`** property. The keyboardType property takes a **TextInputType** object. The TextInputType object can be one of the following:
+
+- text: The default keyboard type.
+- number: The keyboard type for entering numbers.
+- emailAddress: The keyboard type for entering email addresses.
+- datetime: The keyboard type for entering dates and times.
+- multiline: The keyboard type for entering multiple lines of text.
+
+And to hide the text while typing we can use the **`obscureText`** property.
+
+```dart
+// Set the keyboard type to email address
+TextField(
+  keyboardType: TextInputType.emailAddress,
+  textAlign: TextAlign.center,
+  onChanged: (value) {
+    email = value;
+  },
+),
+```
+
+```dart
+// Set the text to be hidden while typing
+TextField(
+  obscureText: true,
+  textAlign: TextAlign.center,
+  onChanged: (value) {
+    password = value;
+  },
+),
+```
+
+|iOS|Android|
+|---|---|
+|![Login Screen iOS](/screenshots/iphone14ProMax_7.gif)|![Login Screen Android](/screenshots/nexus6_7.gif)|
+
+**Firebase Authentication** allow us to authenticate the users using email and password, Google, Facebook, Twitter, and GitHub. In this project we are using email and password authentication.
+
+To create a new user using email and password, we create an instance of **`FirebaseAuth`** class, then we call the **`createUserWithEmailAndPassword()`** method and pass the email and password to it. The method returns a **`UserCredential`** object, which contains the user data.
+
+```dart
+import 'package:firebase_auth/firebase_auth.dart';
+
+final _auth = FirebaseAuth.instance;
+
+try {
+  final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+  if (newUser.user != null) {
+    // Do something
+  }
+} catch (e) {
+    print(e);
+}
+```
+
+**`FirebaseAuth.instance`** is a static property that returns an instance of the **`FirebaseAuth`** class, which means we can access it from anywhere in the app with the same data stored in it, such as in the example below we are able to access the current user data in the **`ChatScreen`**:
+
+```dart
+void getCurrentUser() {
+  try {
+    final user = _auth.currentUser;
+    if (user != null) {
+      loggedInUser = user;
+      print(user.email);
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+```
+
