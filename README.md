@@ -261,3 +261,16 @@ To setup Firebase in your project, you need to create a new project in the [Fire
       implementation platform("com.google.firebase:firebase-bom:32.2.2")
     }
     ```
+
+- iOS setup
+
+  - Download the **GoogleService-Info.plist** file from the console and add it to the **`ios/Runner`** folder in your project.
+
+  - Then run the following command in the terminal to install the dependencies.
+
+    ```bash
+    pod install
+    ```
+
+> I Faced an error while running **`pod install`** command, the error was saying `CDN: trunk URL couldn't be downloaded: https://cdn.jsdelivr.net/cocoa/Specs/0/3/5/Firebase/9.6.0/Firebase.podspec.json Response: SSL connect error` and after searching for a solution I found that "this problem is specific to Egypt as ISPs blocked jsdelivr" in this [issue](https://github.com/CocoaPods/CocoaPods/issues/11939), I fixed it by following the instructions in this [comment](https://github.com/CocoaPods/CocoaPods/issues/10078#issuecomment-696481185).
+
