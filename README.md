@@ -232,3 +232,32 @@ AnimatedTextKit(
 |iOS|Android|
 |---|---|
 |![Typing Animation iOS](/screenshots/iphone14ProMax_6.gif)|![Typing Animation Android](/screenshots/nexus6_6.gif)|
+
+In this project we are using **[Firebase](https://firebase.google.com/)** to store the user data and the messages. Firebase is a backend as a service (BaaS) that provides many services like authentication, database, storage, and hosting.
+
+To setup Firebase in your project, you need to create a new project in the [Firebase Console](https://console.firebase.google.com/). Then you need to add the project to your app by following the instructions in the console.
+
+- Android setup
+
+  - Download the **google-services.json** file from the console and add it to the **`android/app`** folder in your project.
+  - Add the classpath to the **`android/build.gradle`** file.
+
+    ```gradle
+    dependencies {
+      classpath 'com.google.gms:google-services:4.3.15'
+    }
+    ```
+  
+  - Add the plugin to the **`android/app/build.gradle`** file.
+
+    ```gradle
+    apply plugin: 'com.google.gms.google-services'
+    ```
+  
+  - Add the dependencies to the **`android/app/build.gradle`** file.
+
+    ```gradle
+    dependencies {
+      implementation platform("com.google.firebase:firebase-bom:32.2.2")
+    }
+    ```
