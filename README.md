@@ -19,6 +19,8 @@ We are going to learn about the following:
 - **TextEditingController**
 - **Flexible** widget
 
+## Demo
+
 ![Flash chat demo](/screenshots/flash_chat_demo.gif)
 
 ## Tutorial
