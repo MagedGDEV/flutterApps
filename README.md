@@ -98,3 +98,25 @@ class TaskCheckbox extends StatelessWidget {
 |iOS|Android|
 |---|---|
 |![iOS_Callbacks](/screenshots/iphone14ProMax_3.gif)|![Android_Callbacks](/screenshots//nexus6_3.gif)|
+
+**ListView.builder** is a widget that is used to display a list of items. It is a material widget that is displayed as a scrollable list of children widgets, and it is used to display a large number of items efficiently, where the items are not necessarily all loaded into the memory at once. Only the items that are visible on the screen are loaded into the memory.
+
+```dart
+return ListView.builder(
+  itemBuilder: (context, index) {
+    return TaskTile(
+        taskTitle: tasks[index].name,
+        isChecked: tasks[index].isDone,
+        checkboxCallBack: (bool? checked) {
+          setState(() {
+            tasks[index].toggleDone();
+          });
+        });
+  },
+  itemCount: tasks.length,
+);
+```
+
+|iOS|Android|
+|---|---|
+|![iOS_ListViewBuilder](/screenshots/iphone14ProMax_4.png)|![Android_ListViewBuilder](/screenshots//nexus6_4.png)|
