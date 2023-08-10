@@ -1,5 +1,28 @@
 # flash_chat
 
+This is a group chat app allowing users to sign up and log in to chat with other users, developed with the help of Firebase for authentication and Firestore for storing data.
+
+We are going to learn about the following:
+
+- Navigatior named routes
+- Hero animations
+- Creating custom animations & Mixins
+- Curved Animations
+- Tween Animations
+- **Animated Text Kit** package
+- Setting up Firebase with Flutter
+- Firebase authentication
+- Firebase Cloud Firestore
+- **modal_progress_hud_nsn** package
+- Streams & **StreamBuilder** widget
+- **ListView** widget
+- **TextEditingController**
+- **Flexible** widget
+
+![Flash chat demo](/screenshots/flash_chat_demo.gif)
+
+## Tutorial
+
 **Navigator named routes** are used to navigate to a named route. Using named routes is a good practice since it makes the codebase easy to read and maintain. If you need to change the name of a route, you'll only need to update it in one place.
 
 The named routes are defined at the beginning of the main.dart file, in the **`routes`** property of the MaterialApp widget.
@@ -363,3 +386,156 @@ void getCurrentUser() {
 }
 ```
 
+To login an existing user using email and password, we call the **`signInWithEmailAndPassword()`** method and pass the email and password to it. The method returns a **`UserCredential`** object, which contains the user data.
+
+```dart
+try {
+  final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+  if (user != null) {
+    // Do something
+  }
+} catch (e) {
+  print(e);
+}
+```
+
+To logout the current user, we call the **`signOut()`** method.
+  
+```dart
+_auth.signOut();
+```
+
+**[modal_progress_hud_nsn](https://pub.dev/packages/modal_progress_hud_nsn)** is a package that provides a widget to show a loading spinner while waiting for a task to complete, this widget is used as a wrapper for the widget that we want to show the loading spinner on, **`isAsyncCall`** property is used to show or hide the loading spinner.
+
+```dart
+ModalProgressHUD(
+  inAsyncCall: loading,
+  child: ...
+),
+```
+
+|iOS|Android|
+|---|---|
+|![modal_progress_hud_nsn iOS](/screenshots/iphone14ProMax_8.gif)|![modal_progress_hud_nsn Android](/screenshots/nexus6_8.gif)|
+
+**Cloud Firestore** is a NoSQL document database that lets you easily store, sync, and query data for your mobile and web apps - at global scale. In this project we are using it to store the messages.
+
+To add data into the database, we need to create an instance of **`FirebaseFirestore`** class, then we call the **`collection()`** method and pass the name of the collection that we want to add the data to, then we call the **`add()`** method and pass the data to it.
+
+```dart
+try {
+  _fireStore.collection('messages').add({
+    'sender': loggedInUser.email,
+    'text': message,
+  });
+} catch (e) {
+  print(e);
+}
+```
+
+To get data from the database, we call the **`collection()`** method and pass the name of the collection that we want to get the data from, then we call the **`getDocuments()`** method to get the data.
+
+```dart
+Future<void> getMessages() async {
+  final messages = await _fireStore.collection('messages').get();
+  for (var message in messages.docs) {
+    print(message.data());
+  }
+}
+```
+
+But the **`getDocuments()`** method is not a real-time method, which means it will not update the data automatically when the data in the database changes, to get the data in real-time we need to use the **`snapshots()`** method instead of the **`getDocuments()`** method.
+
+```dart
+Future<void> messageStream() async {
+  await for (var snapshot in _fireStore.collection('messages').snapshots()) {
+    for (var message in snapshot.docs) {
+      print(message.data());
+    }
+  }
+}
+```
+
+**`snapshots()`** returns a **`Stream`** object, which is a sequence of asynchronous events which means that once we get the data, we can listen to the stream to get the data in real-time, withouth the need to call the method again, and to listen to the stream we use the **StreamBuilder** widget.
+
+**StreamBuilder** widget takes a **Stream** object and a **builder** function, the **builder** function takes a **context** and a **snapshot** object, the **snapshot** object contains the data that we get from the stream, and we can access the data using the **`snapshot.data`** property.
+
+```dart
+StreamBuilder<QuerySnapshot>(
+  stream: _fireStore.collection('messages').snapshots(),
+  builder: (context, snapshot) {
+    List<Text> messageWidgets = [];
+    if (!snapshot.hasData) {
+      return const Center(
+        child: CircularProgressIndicator(
+          backgroundColor: Colors.lightBlueAccent,
+        ),
+      );
+    }
+    final messages = snapshot.data!.docs;
+    for (var message in messages) {
+      final messageTXT = message['text'];
+      final messageSender = message['sender'];
+      final messageWidget = Text('$messageTXT from $messageSender');
+      messageWidgets.add(messageWidget);
+    }
+    return Column(
+      children: messageWidgets,
+    );
+  },
+),
+```
+
+**ListView** widget is a scrollable list that works with a large number of items, it takes a **children** property that takes a list of widgets.
+
+```dart
+ListView(
+  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+  children: bubbleWidgets,
+),
+```
+
+To delete text from a TextField widget, we need to create a **TextEditingController** object, then we pass it to the **controller** property of the TextField widget, then we call the **`clear()`** method to clear the text.
+
+```dart
+final messageTextController = TextEditingController();
+
+// TextField widget
+child: TextField(
+  controller: messageTextController,
+  onChanged: (value) {
+    messageText = value;
+  },
+  decoration: kMessageTextFieldDecoration,
+),
+
+// Send button
+TextButton(
+  onPressed: () {
+    messageTextController.clear();
+    // Do something
+  },
+  child: const Text(
+    'Send',
+    style: kSendButtonTextStyle,
+  ),
+),
+```
+
+|iOS|Android|
+|---|---|
+|![List View iOS](/screenshots/iphone14ProMax_9.gif)|![List View Android](/screenshots/nexus6_9.gif)|
+
+**Flexible** widget is used to handle the overflow of child widget, so if the child widget is overflowing, the Flexible widget will resize the child widget to fit the screen.
+
+```dart
+Flexible(
+  child: Hero(
+    tag: 'logo',
+    child: SizedBox(
+      height: 200.0,
+      child: Image.asset('images/logo.png'),
+    ),
+  ),
+),
+```
