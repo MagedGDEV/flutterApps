@@ -13,7 +13,14 @@ class TasksScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => const AddTask(),
+            isScrollControlled: true,
+            builder: (context) => SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: const AddTask(),
+              ),
+            ),
           );
         },
         backgroundColor: Colors.lightBlueAccent,
