@@ -103,3 +103,24 @@ Together, let's embrace the power of Flutter and advance our app development pro
 |iOS|Android|
 |---|---|
 |![Clima iOS](/screenshots/iOS_clima.gif)|![Clima Android](/screenshots/android_clima.gif)|
+
+- **[flash chat](https://github.com/MagedGDEV/flutterApps/tree/flash_chat):** This is a group chat app allowing users to sign up and log in to chat with other users, developed with the help of Firebase for authentication and Firestore for storing data, that teaches about the following concepts:
+
+  - Navigatior named routes
+  - Hero animations
+  - Creating custom animations & Mixins
+  - Curved Animations
+  - Tween Animations
+  - **Animated Text Kit** package
+  - Setting up Firebase with Flutter
+  - Firebase authentication
+  - Firebase Cloud Firestore
+  - **modal_progress_hud_nsn** package
+  - Streams & **StreamBuilder** widget
+  - **ListView** widget
+  - **TextEditingController**
+  - **Flexible** widget
+
+***flash chat demo:***
+
+![Flash chat demo](/screenshots/flash_chat.gif)
