@@ -124,3 +124,16 @@ Together, let's embrace the power of Flutter and advance our app development pro
 ***flash chat demo:***
 
 ![Flash chat demo](/screenshots/flash_chat.gif)
+
+- **[todoey](https://github.com/MagedGDEV/flutterApps/tree/todoey):** This is a todo list application that allows the user to add tasks, mark them as done, and delete them on long press that teaches about the following:
+
+- **ListTile** widget
+- **Checkbox** widget
+- **showModalBottomSheet** function
+- Callbacks
+- **ListView.builder** widget
+- State management (**Provider** package)
+
+|iOS|Android|
+|---|---|
+|![iOS](/screenshots/iOS_todoey.gif)|![Android](/screenshots/android_todoey.gif)|
