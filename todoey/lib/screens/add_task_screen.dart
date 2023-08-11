@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task.dart';
+import 'package:todoey/tasks_provider.dart';
 
 class AddTask extends StatelessWidget {
-  const AddTask({super.key});
-
   @override
   Widget build(BuildContext context) {
+    String? taskName;
     return Container(
       color: const Color(0xFF757575),
       child: Container(
@@ -27,14 +29,22 @@ class AddTask extends StatelessWidget {
                 fontSize: 30,
               ),
             ),
-            const TextField(
+            TextField(
               autofocus: true,
+              onChanged: (value) {
+                taskName = value;
+              },
             ),
             const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (taskName != null) {
+                  context.read<TasksProvider>().addNewTask(taskName!);
+                }
+                Navigator.pop(context);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.lightBlueAccent,
               ),
