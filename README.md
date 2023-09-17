@@ -435,7 +435,7 @@ try {
 }
 ```
 
-To get data from the database, we call the **`collection()`** method and pass the name of the collection that we want to get the data from, then we call the **`getDocuments()`** method to get the data.
+To get data from the database, we call the **`collection()`** method and pass the name of the collection that we want to get the data from, then we call the **`get()`** method to get the data.
 
 ```dart
 Future<void> getMessages() async {
@@ -446,7 +446,7 @@ Future<void> getMessages() async {
 }
 ```
 
-But the **`getDocuments()`** method is not a real-time method, which means it will not update the data automatically when the data in the database changes, to get the data in real-time we need to use the **`snapshots()`** method instead of the **`getDocuments()`** method.
+But the **`get()`** method is not a real-time method, which means it will not update the data automatically when the data in the database changes, to get the data in real-time we need to use the **`snapshots()`** method instead of the **`get()`** method.
 
 ```dart
 Future<void> messageStream() async {
