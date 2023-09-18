@@ -458,7 +458,7 @@ Future<void> messageStream() async {
 }
 ```
 
-**`snapshots()`** returns a **`Stream`** object, which is a sequence of asynchronous events which means that once we get the data, we can listen to the stream to get the data in real-time, withouth the need to call the method again, and to listen to the stream we use the **StreamBuilder** widget.
+**`snapshots()`** returns a **`Stream`** object, which is a sequence of asynchronous events which means that once we get the data, we can listen to the stream to get the data in real-time, without the need to call the method again, and to listen to the stream we use the **StreamBuilder** widget.
 
 **StreamBuilder** widget takes a **Stream** object and a **builder** function, the **builder** function takes a **context** and a **snapshot** object, the **snapshot** object contains the data that we get from the stream, and we can access the data using the **`snapshot.data`** property.
 
