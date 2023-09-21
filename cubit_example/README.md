@@ -11,4 +11,4 @@ It will demonstrate the following concepts:
 
 |iOS|Android|
 |---|-------|
-|![iOS](/screenshots/iphone14ProMax_cubit.gif)|![Android](/screenshots/NEXUS6_cubit.gif)|
+|![iOS](/screenshots/iphone14ProMax_cubit.gif)|![Android](/screenshots/nexus6_cubit.gif)|
