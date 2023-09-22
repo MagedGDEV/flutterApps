@@ -149,4 +149,4 @@ Together, let's embrace the power of Flutter and advance our app development pro
 
 |iOS|Android|
 |---|-------|
-|![iOS](/screenshots/ios_cubit.gif)|![Android](/screenshots/android_cubit.gif)|
+|![iOS](/screenshots/iOS_cubit.gif)|![Android](/screenshots/android_cubit.gif)|
