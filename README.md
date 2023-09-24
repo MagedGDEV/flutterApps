@@ -106,7 +106,8 @@ Cubit emits the following states:
 - **`ConnectionState.active`** when the cubit is emitting a new state.
 - **`ConnectionState.done`** when the cubit is closed.
 
-> Note: **StreamBuilder** is explained in detail in the **[Flash_Chat tutorial](https://github.com/MagedGDEV/flutterApps/tree/flash_chat)**
+> [!NOTE]
+> **StreamBuilder** is explained in detail in the **[Flash_Chat tutorial](https://github.com/MagedGDEV/flutterApps/tree/flash_chat)**
 
 ### Step 4 - Close the cubit
 
