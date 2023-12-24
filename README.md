@@ -38,9 +38,8 @@ Text('Hello World!')
 Text widgets are placed in the top left corner of its parent widget.
 In order to center the text, we use the widget Center.
 
-> To have a well formated code in dart, we use **dartfmt**.
-> you have to help it by adding a comma after each widget. 
-> as shown in the example below.
+> [!NOTE]
+> To have a well formated code in dart, we use **dartfmt**, you have to help it by adding a comma after each widget, as shown in the example below.
 
 ```dart
 Center(
@@ -48,8 +47,7 @@ Center(
 )
 ```
 
-The main function is the entry point of our application.
-> ***Material app*** is the basis for all the other widgets.
+The ***main function*** is the entry point of our application, and ***Material app*** is the basis for all the other widgets.
 
 ```dart
 void main() {
@@ -86,6 +84,8 @@ MaterialApp(
 ```
 
 **App Bar** is a widget provided by the scaffold widget that allows us to have a bar at the top of the screen.
+
+> [!NOTE]
 > **backgroundColor** is a property that allows us to change the background color of a widget.
 
 ```dart
@@ -149,7 +149,7 @@ MaterialApp(
 |--|--|
 |![iOS_Image](screenshots/iphone14ProMax_3.png)|![Android_Image](screenshots/nexus6_3.png)|
 
-To wrap some wigdet within another widget, we can do this easily in android studio by selecting the widget and do on of the following:
+To wrap some wigdet within another widget, we can do this easily in android studio by selecting the widget and do one of the following:
 
 - Press on the light bulb icon on the left of the widget
 - **Option + Enter** (Mac)
