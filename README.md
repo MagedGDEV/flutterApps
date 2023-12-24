@@ -15,7 +15,7 @@ One of the powerful features of flutter is the availability of lots of developed
 
 These packages are available on [pub.dev](https://pub.dev/) and can be used by adding them to the `pubspec.yaml` file.
 
-You can a package to your project by either one of the following ways:
+You can add a package to your project by either one of the following ways:
 
 - Adding the package name under the **dependencies** section of the `pubspec.yaml` file and running `flutter pub get` in the terminal.
 
