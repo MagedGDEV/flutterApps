@@ -37,7 +37,7 @@ Together, let's embrace the power of Flutter and advance our app development pro
   - **TextStyle**
     - Adding downloaded font family to our app
   - **Icon**
-    - **SizedBox**
+  - **SizedBox**
   - **Card**
   - **ListTile**
   - **Divider**
