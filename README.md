@@ -54,11 +54,15 @@ class MyApp extends StatelessWidget {
 **Hot Restart** is a another tool that allows us to restart the app from scratch. It is useful when we make changes to the **main()** method or when we add new dependencies to our **pubspec.yaml** file, and still doesn't take much time to restart the app as building the app from scratch.
 
 **Container** is a widget that acts as a `<div>` in HTML. It allows us to add padding, margin, border, background color, etc. to our widgets.
-> **Note:** Container is a widget that can only have one child widgeet, and when we don't specify a child widget, it tries to be as big as possible.
+
+>[!NOTE]
+> Container is a widget that can only have one child widget, and when we don't specify a child widget, it tries to be as big as possible.
 
 if you added a widget as a child to contianer, it will be placed at the top left corner of the screen. and this may interfere with notches of some devices like the ones in iPhone mobiles.
 
-**SafeArea** is a widget that makes sure that the content of our app is visible on the screen. It is useful when we want to make sure that our app is not hidden behind the notch of the device.
+**SafeArea** is a widget that makes sure that the content of our app is visible on the screen. It is useful when we want to make sure that the contents of our app is not hidden behind the notch of the device.
+
+>[!NOTE]
 > To change the background color of the Container, we can use the **color** property of the Container widget.
 
 ```dart
@@ -93,11 +97,11 @@ Both **margin** and **padding** take a **EdgeInsets** object as a value. **EdgeI
 - **EdgeInsets.all()**
   - It adds the same amount of space to all sides of the widget.
 - **EdgeInsets.symmetric()**
-  - It adds the same amount of space to the vertical and horizontal sides of the widget.
+  - It adds different amounts of space to the vertical and horizontal sides of the widget.
 - **EdgeInsets.fromLTRB()**
   - It adds different amounts of space to the left, top, right, and bottom sides of the widget.
 - **EdgeInsets.only()**
-  - It adds different amounts of space to the left, top, right, and bottom sides of the widget.
+  - It adds different amounts of space to the left, top, right, and bottom sides of the widget, and you don't have to specify all the sides.
 
 ```dart
 Container(
@@ -258,9 +262,8 @@ Row(
 
 **CircleAvatar** is a widget that allows us to add circular images to our apps, it can be used to add profile pictures to our apps.
 
->**radius** property of the **CircleAvatar** widget allows us to specify the radius of the circle.
-
->**backgroundImage** property of the **CircleAvatar** widget allows us to specify the image that we want to use as a background image for the circle.
+>[!NOTE]
+>**radius** property of the **CircleAvatar** widget allows us to specify the radius of the circle, and **backgroundImage** property of the **CircleAvatar** widget allows us to specify the image that we want to use as a background image for the circle.
 
 ```dart
 CircleAvatar(
@@ -301,6 +304,8 @@ Text(
 |![iOS_TextStyle](/screenshots/iphone14ProMax_5.png)|![Android_TextStyle](/screenshots/nexus6_5.png)|
 
 To add donwloaded font family to our app, we need to add the font family to the **pubspec.yaml** file, and then we need to add the font family to the **TextStyle** class.
+
+>[!TIP]
 > You can use font families from [Google Fonts](https://fonts.google.com/) for free.
 
 ```yaml
@@ -325,11 +330,12 @@ Text(
 |:---:|:---:|
 |![iOS_FontFamily](/screenshots/iphone14ProMax_6.png)|![Android_FontFamily](/screenshots/nexus6_6.png)|
 
-**Icon** is a widget that allows us to add icons to our apps, it better that using images as icons because it is easier to change the color of the icon, and it is easier to change the size of the icon.
+**Icon** is a widget that allows us to add icons to our apps, it better that using images because it is easier to change the color of the icon, and it is easier to change the size of the icon.
 
 You can find all the icons that are available in Flutter documentation [here](https://api.flutter.dev/flutter/material/Icons-class.html).
 
-> **SizedBox** is a widget that allows us to add space between widgets.
+>[!TIP]
+> **SizedBox** is a widget that allows us to add empty space between widgets.
 
 ```dart
 Container(
@@ -365,7 +371,7 @@ Container(
 
 Some widgets like **Card** doesn't have a **padding** property, so we need to wrap them with a **Padding** widget to be able to add padding to them.
 
-Common used widgets with **Card** widget are **ListTile** a widget that allows us to add a list item to our app, and it has a **leading** property that allows us to add an icon to the left of the list item, and it has a **title** property that allows us to add a title to the list item, and it has a default padding around it.
+Common used widget with **Card** widget is **ListTile** a widget that allows us to add a list item to our app, and it has a **leading** property that allows us to add an icon to the left of the list item, and it has a **title** property that allows us to add a title to the list item, and it has a default padding around it.
 
 ```dart
 Card(
