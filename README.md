@@ -82,6 +82,8 @@ floatingActionButton: Theme(
 |---|---|
 |![iOS_Theme](/screenshots/iphone14ProMax_3.png)|![Android_Theme](/screenshots/nexus6_3.png)|
 
+There are two ways to create a constant variable in Dart, using the **final** keyword or the **const** keyword. The difference between them is:
+
 |final|const|
 |---|---|
 |final variables are initialized when they are accessed for the first time.|const variables are initialized during compilation.|
